@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+<h1>Your profile details</h1>
+<table>
+    <tr>
+        <!--<th th:text="'Id:'"> </th>-->
+        <th th:text="'First Name:'"> </th>
+        <th th:text="'Last Name:'"> </th>
+        <th th:text="'Email:'"> </th>
+        <th th:text="'Phone Number:'"> </th>
+        <th th:text="'Gender:'"> </th>
+        <th th:text="'Date of Birth:'"> </th>
+        <th th:text="'Update:'"> </th>
+        <th th:text="'Delete:'"> </th>
+
+    </tr>
+<tr>
+    <!--<tr th:each="ride: ${rides}">-->
+        <!--<td th:text="${user.id}"></td>-->
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.dateOfBirth}"></td>
+        <td> <a th:href="@{/user/update/{id}/(id=${user.id})}"> EDIT </a> </td>
+        <td> <a th:href="@{/user/delete/{id}/(id=${user.id})}"> DELETE </a> </td>
+    </tr>
+
+
+</table>
+
+<a th:href="@{/welcome}"> Back to Main Page </a>
+</section>
+</body>
+</html>

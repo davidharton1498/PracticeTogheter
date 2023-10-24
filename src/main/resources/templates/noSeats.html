@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+
+<h2> Sorry there are no seats available on this ride please try another one </h2>
+<h2 th:text="'List of available rides:'">  </h2></br>
+
+<a th:href="@{/ride/listRides}"> List of available rides </a>
+<h2 th:text="'Login as a driver:'" > </h2></br>
+<a th:href="@{/welcome}"> Back to Main Page </a>
+</section>
+</body>
+</html>

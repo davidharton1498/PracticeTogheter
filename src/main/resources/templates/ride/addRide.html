@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+<h1>Your details: </h1>
+
+<form th:action="@{/ride/add}" th:object="${ride}" method="post">
+
+    <p><input type="hidden" th:value="*{id}"/></p>
+    <p> From: <input type="text" th:field= "*{placeA}" th:errorClass="error"/></p>
+    <p> To: <input type="text" th:field="*{placeB}" /></p>
+    <p>Date: <input type="text" th:field="*{date}" /></p>
+    <p>Time: <input type="text" th:field="*{time}" /></p>
+    <p>Free Seats: <input type="text" th:field="*{freeSeats}" /></p>
+    <p>Luggage: <input type="text" th:field="*{luggage}" /></p>
+    <p>Price: <input type="text" th:field="*{price}" /></p>
+
+
+    <p><input type="submit" value="Submit" /></p>
+</form>
+
+<a th:href="@{/welcome}"> Back to Main Page </a>
+</section>
+</body>
+</html>
+
+
+

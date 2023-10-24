@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+<h1 th:text="'Your ride'"> </h1>
+<table>
+    <tr>
+        <th th:text="'Id:'"> </th>
+        <th th:text="'From:'"> </th>
+        <th th:text="'To:'"> </th>
+        <th th:text="'Date:'"> </th>
+        <th th:text="'Time:'"> </th>
+        <th th:text="'Free Seats:'"> </th>
+        <th th:text="'Luggage:'"> </th>
+        <th th:text="'Price:'"> </th>
+        <th th:text="'Edit:'"> </th>
+        <th th:text="'Delete:'"> </th>
+
+    </tr>
+
+    <tr th:each="ride: ${rides}">
+        <td th:text="${ride.id}"></td>
+        <td th:text="${ride.placeA}"></td>
+        <td th:text="${ride.placeB}"></td>
+        <td th:text="${ride.date}"></td>
+        <td th:text="${ride.time}"></td>
+        <td th:text="${ride.freeSeats}"></td>
+        <td th:text="${ride.luggage}"></td>
+        <td th:text="${ride.price}"></td>
+        <td> <a th:href="@{/ride/update/{id}/(id=${ride.id})}"> EDIT </a> </td>
+        <td> <a th:href="@{/ride/delete/{id}/(id=${ride.id})}"> DELETE </a> </td>
+    </tr>
+
+    <a th:href="@{/welcome}"> Back to Main Page </a>
+
+</table>
+</section>
+</body>
+</html>

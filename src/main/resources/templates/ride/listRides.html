@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+
+<h3> Search by :</h3>
+<form action ="/ride/byStart", method=""post>
+    Search rides by Starting place:
+    <input type="text" name="placeb"> </br>
+    <input type="submit" value="Search">
+</form>
+<form action ="/ride/byDestination", method=""post>
+    Search rides by Destination place:
+    <input type="text" name="placea"> </br>
+    <input type="submit" value="Search">
+</form>
+<form action ="/ride/byDate", method=""post>
+    Search rides by Date:
+    <input type="text" name="date"></br>
+    <input type="submit" value="Search">
+</form>
+
+</br>
+<h3>List of Rides</h3>
+<table>
+    <tr>
+        <th th:text="'From:'"> </th>
+        <th th:text="'To:'"> </th>
+        <th th:text="'Date:'"> </th>
+        <th th:text="'Time:'"> </th>
+        <th th:text="'Free Seats:'"> </th>
+        <th th:text="'Luggage:'"> </th>
+        <th th:text="'Price:'"> </th>
+        <th th:text="'Details:'"> </th>
+
+    </tr>
+
+
+    <tr th:each="ride: ${rides}">
+        <td th:text="${ride.placeA}"></td>
+        <td th:text="${ride.placeB}"></td>
+        <td th:text="${ride.date}"></td>
+        <td th:text="${ride.time}"></td>
+        <td th:text="${ride.freeSeats}"></td>
+        <td th:text="${ride.luggage}"></td>
+        <td th:text="${ride.price}"></td>
+        <td>  <a th:href="@{/ride/reserveRide/{id}/(id=${ride.id})}"> Reserve a ride </a></td>
+
+    </tr>
+</table>
+<a th:href="@{/welcome}"> Back to Main Page </a>
+</section>
+</body>
+</html>
+

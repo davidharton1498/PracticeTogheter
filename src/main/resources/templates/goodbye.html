@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+<h1 th:text="'Thanks for the visit! See you soon' " > </h1> </br>
+<h2 th:text="'Go back to Main Page:'">  </h2></br>
+<a th:href="@{/}"> Main </a>
+</section>
+</body>
+</html>

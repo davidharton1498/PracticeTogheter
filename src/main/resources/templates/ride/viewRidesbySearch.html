@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+<table>
+    <tr>
+        <th th:text="'From:'"> </th>
+        <th th:text="'To:'"> </th>
+        <th th:text="'Date:'"> </th>
+        <th th:text="'Time:'"> </th>
+        <th th:text="'Free Seats:'"> </th>
+        <th th:text="'Details:'"> </th>
+
+    </tr>
+
+
+    <tr th:each="ride: ${rides}">
+        <td th:text="${ride.placeA}"></td>
+        <td th:text="${ride.placeB}"></td>
+        <td th:text="${ride.date}"></td>
+        <td th:text="${ride.time}"></td>
+        <td th:text="${ride.freeSeats}"></td>
+        <td>  <a th:href="@{/ride/showOne/{id}/(id=${ride.id})}"> Show Details </a></td>
+
+    </tr>
+
+</table>
+
+<a th:href="@{/welcome}"> Back to Main Page </a>
+</section>
+</body>
+</html>

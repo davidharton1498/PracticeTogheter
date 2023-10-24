@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<section layout:fragment="content">
+<h1>Your taxi profile details</h1>
+
+<p th:text="'First name'" />
+<p th:text="${user.firstName}"></p>
+<p th:text ="'Last name:'"></p>
+<p th:text="${user.lastName}"></p>
+<p th:text ="'Email:'"></p>
+<p th:text="${user.email}"></p>
+<p th:text ="'Phone Number:'"></p>
+<p th:text="${user.phoneNumber}"></p>
+<p th:text ="'Car Brand:'"></p>
+<p th:text="${user.carBrand}"></p>
+<p th:text ="'Car Color:'"></p>
+<p th:text="${user.carColor}"> :</p>
+<p th:text ="'Passenger Capacity:'"></p>
+<p th:text="${user.passengerCapacity}"> :</p>
+<!--<p th:text="${user.rides.id}">Rides:</p>-->
+
+</section>
+</body>
+</html>
